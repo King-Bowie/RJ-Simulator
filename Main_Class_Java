@@ -1,0 +1,15 @@
+package fakecall;
+
+import javax.swing.JFrame;
+
+
+public class FakeCAll {
+
+    public static void main(String[] args) {
+        JFrame tela = new Call();
+        tela.setVisible(true);
+        tela.setLocationRelativeTo(null);
+    }
+   
+    
+}
