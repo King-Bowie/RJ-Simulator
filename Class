@@ -1,0 +1,70 @@
+package fakecall;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class NewCall {
+    
+
+    private String nome;
+    private String email;
+    private String CPF;
+    private String telefone;
+    
+   
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String salvar() {
+        try {
+            FileWriter fw = new FileWriter("C:\\Users\\YourUser\\Área de Trabalho\\directory\\MyClient.txt", true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println("Nome: " + this.nome);
+            pw.println("Email: " + this.email);
+            pw.println("CPF: " + this.CPF);
+            pw.println("Telefone :" + this.telefone);
+            pw.flush();
+            pw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Call.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "Registration done successfully!";
+    }
+
+  
+  
+
+}
